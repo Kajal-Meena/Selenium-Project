@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class SignUp {
@@ -31,9 +30,9 @@ public class SignUp {
         Select yy = new Select(driver.findElement(By.id("year")));
         yy.selectByVisibleText("1998");
         //  driver.findElement(By.xpath("//select[@name=\"birthday_year\"]/option[text()=\"1998\"]")).click();
-        driver.findElement(By.xpath("//label[text()=\"Female\"]")).click();
+      driver.findElement(By.xpath("//input[@value='-1']")).click();
         //   driver.findElement(By.xpath(""));
 
     }
-}{
 }
+
