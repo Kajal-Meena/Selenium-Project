@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public class SalesForce {
+public class salesForce {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
   //      driver.get("https://www.salesforce.com/in/?ir=1");

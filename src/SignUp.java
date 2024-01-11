@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
-public class SignUp {
+public class signUp {
     public static void main(String[] args) {
         //throws InterruptedException{
         WebDriver driver = new ChromeDriver();
@@ -15,11 +13,11 @@ public class SignUp {
         driver.get("https://www.facebook.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-        driver.findElement(By.xpath("//a[text()=\"Create new account\"]")).click();
+        driver.findElement(By.linkText("Create new account")).click();
         //    Thread.sleep(5000);
         driver.findElement(By.name("firstname")).sendKeys("John");
         driver.findElement(By.name("lastname")).sendKeys("Scott");
-        driver.findElement(By.xpath("//input[@aria-label=\"Mobile number or email address\"]")).sendKeys("4786822");
+        driver.findElement(By.name("reg_email__")).sendKeys("4786822");
         driver.findElement(By.name("reg_passwd__")).sendKeys("gxhs");
         Select date = new Select(driver.findElement(By.id("day")));
         date.selectByVisibleText("13");
@@ -30,8 +28,9 @@ public class SignUp {
         Select yy = new Select(driver.findElement(By.id("year")));
         yy.selectByVisibleText("1998");
         //  driver.findElement(By.xpath("//select[@name=\"birthday_year\"]/option[text()=\"1998\"]")).click();
-      driver.findElement(By.xpath("//input[@value='-1']")).click();
+      driver.findElement(By.xpath("//input[@value='1']")).click();
         //   driver.findElement(By.xpath(""));
+        driver.findElement(By.name("websubmit")).click();
 
     }
 }
